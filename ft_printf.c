@@ -6,7 +6,7 @@
 /*   By: krfranco <krfranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 00:37:54 by krfranco          #+#    #+#             */
-/*   Updated: 2023/11/19 02:46:00 by krfranco         ###   ########.fr       */
+/*   Updated: 2023/11/19 21:52:17 by krfranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	arg_list(char c, va_list *args, int ret)
 		ret = ft_putnbr(va_arg(*args, int), ret);
 	else if (c == 'u')
 		ret = ft_putunsigned(va_arg(*args, unsigned int), ret);
+	else if (c == 'p')
+		ret = ft_putpoint(va_arg(*args, unsigned long long), ret);
 	else if (c == 'x')
 		ret = ft_puthexa(va_arg(*args, int), "0123456789abcdef", ret);
 	else if (c == 'X')
@@ -49,12 +51,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (ret);
-}
-
-int main()
-{
-	char str[] = "CHAT";
-	int i = 21343;
-	ft_printf("mdrrr %x %%jaksosl\n %u, adh %s", i, i, str);
-	return (0);
 }
