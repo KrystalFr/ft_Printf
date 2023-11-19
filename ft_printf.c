@@ -6,7 +6,7 @@
 /*   By: krfranco <krfranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 00:37:54 by krfranco          #+#    #+#             */
-/*   Updated: 2023/11/19 21:52:17 by krfranco         ###   ########.fr       */
+/*   Updated: 2023/11/19 22:27:17 by krfranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	ft_printf(const char *str, ...)
 
 	va_start(args, str);
 	i = 0;
+	ret = 0;
 	while (str[i])
 	{
 		if (str[i] == '%')
