@@ -6,7 +6,7 @@
 /*   By: krfranco <krfranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 00:37:54 by krfranco          #+#    #+#             */
-/*   Updated: 2023/11/19 22:27:17 by krfranco         ###   ########.fr       */
+/*   Updated: 2023/11/19 22:31:39 by krfranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ int	ft_printf(const char *str, ...)
 	int		ret;
 	va_list	args;
 
-	va_start(args, str);
 	i = 0;
 	ret = 0;
+	va_start(args, str);
 	while (str[i])
 	{
 		if (str[i] == '%')
 			ret = arg_list(str[++i], &args, ret);
 		else
-			ft_putchar(str[i], ret);
+			ret = ft_putchar(str[i], ret);
 		i++;
 	}
 	va_end(args);
